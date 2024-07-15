@@ -19,7 +19,7 @@ const createCRUDController = (modelName) => {
 
   const Model = mongoose.model(modelName);
   let crudMethods = {
-    create: (req, res) => create(Model, req, res),
+    create: (...rest) => create(Model, ...rest),
     read: (req, res) => read(Model, req, res),
     update: (req, res) => update(Model, req, res),
     delete: (req, res) => remove(Model, req, res),

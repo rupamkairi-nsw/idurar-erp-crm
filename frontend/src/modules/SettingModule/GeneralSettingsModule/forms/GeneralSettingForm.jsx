@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Input, Form, Select, Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 
-import languages from '@/locale/languages';
+// import languages from '@/locale/languages';
 import useLanguage from '@/locale/useLanguage';
 import { translateAction } from '@/redux/translate/actions';
 import { countryList } from '@/utils/countryList';
@@ -11,9 +11,9 @@ import { selectLangDirection } from '@/redux/translate/selectors';
 export default function GeneralSettingForm() {
   const translate = useLanguage();
   const dispatch = useDispatch();
-const langDirection=useSelector(selectLangDirection)
+  const langDirection = useSelector(selectLangDirection);
   return (
-    <div style={{direction:langDirection}}>
+    <div style={{ direction: langDirection }}>
       <Form.Item
         label={translate('language')}
         name="idurar_app_language"
@@ -37,7 +37,7 @@ const langDirection=useSelector(selectLangDirection)
             dispatch(translateAction.translate(value));
           }}
         >
-          {languages.map((language) => (
+          {/* {languages.map((language) => (
             <Select.Option key={language.value} value={language.value} label={language.label}>
               <div className="demo-option-label-item">
                 <span role="img" aria-label={language.label}>
@@ -46,7 +46,7 @@ const langDirection=useSelector(selectLangDirection)
                 {language.label}
               </div>
             </Select.Option>
-          ))}
+          ))} */}
         </Select>
       </Form.Item>
       <Form.Item
